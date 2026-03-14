@@ -338,7 +338,7 @@ def conversation_to_markdown(conv: dict, extra_tags: list, keep_artifacts: bool 
 
     yaml_fm = (
         "---\n"
-        f'title: "{title.replace(chr(34), chr(39))}"\n'
+        f'title: "{title.strip().replace(chr(34), chr(39))}"\n'
         f"date: {date_str}\n"
         f"updated: {updated_str}\n"
         f"tags:\n  - {tags_block}\n"
