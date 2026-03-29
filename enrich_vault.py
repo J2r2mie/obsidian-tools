@@ -144,15 +144,13 @@ def detect_topic(title: str, body: str) -> tuple[str, dict]:
         score = 0
         for kw, weight in keywords:
             # Le titre compte triple
-            if kw in title_lower:
-                score += weight * 3
-            if kw in body_lower:
-                score += weight
+            score += len(re.findall(r'\b' + re.escape(kw) + r'\b', title_lower)) * weight * 3
+            score += len(re.findall(r'\b' + re.escape(kw) + r'\b', body_lower)) * weight
         scores[topic] = score
 
     best_topic = max(scores, key=scores.get)
-    if scores[best_topic] < MIN_TOPIC_SCORE:
-        best_topic = "general"
+    if scores[best_topic] < 3:
+        best_topic = "perso-general"
 
     return best_topic, scores
 
