@@ -1,0 +1,18 @@
+{
+  "_comment": "Fichier d'état des imports Obsidian. Mis à jour automatiquement après chaque import réussi.",
+  "_version": 1,
+  "claude": {
+    "last_import": null,
+    "total_imported": 0,
+    "imported_ids": []
+  },
+  "lechat": {
+    "last_import": null,
+    "total_imported": 0,
+    "imported_ids": []
+  },
+  "perplexity": {
+    "last_import": null,
+    "total_imported": 0
+  }
+}
